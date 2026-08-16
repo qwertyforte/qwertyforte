@@ -14,13 +14,26 @@ Build **QwertyForte**, a portable, high-performance developer control panel, bui
 
 > [!IMPORTANT]
 > **Operating System Brand Expansions**:
+> - Added **Windows Phone** with its 3-tier matrix (Newest: Windows 10 Mobile, Most Popular: Windows Phone 8.1, Oldest: Windows Phone 7.5 / Windows Mobile 6.5).
 > - Added **Linux** (Newest: Ubuntu 24.04 LTS / Kernel 6.10, Most Popular: Ubuntu 22.04 LTS / Debian 12, Oldest: Slackware 1.0 / Linux 1.0).
 > - Added **BSD** (Newest: FreeBSD 14.1 / OpenBSD 7.5, Most Popular: FreeBSD 13.3, Oldest: 386BSD 0.1 / FreeBSD 1.0).
-> - Each of these 9 OS brands comes pre-activated with the 3-tier matrix (Newest, Most Popular, Oldest Supported).
+> - Each of these 10 core OS brands comes pre-activated with the 3-tier matrix (Newest, Most Popular, Oldest Supported).
 
 > [!IMPORTANT]
-> **Agentic Slash Commands & State Ticket Engine**:
-> The omni-bar search input integrates natural language and AI agentic slash commands (`/libre`, `/help` / `/ayuda`, `/checkmark`, `/checkoff`), supporting temporal filters, publication/file parsing, and discrete state ticket snapshots (`#001`, `#002`...) for one-click and command-driven rollbacks.
+> **Privacy, Niche, and Minimalist Mobile Systems in Registry**:
+> Added to the searchable OS registry (available on demand, not pre-activated by default):
+> - **PinePhone / PinePhone Pro** (PostmarketOS / Manjaro ARM, `aarch64`, `.tar.xz`/`.apk`)
+> - **Purism Librem 5** (PureOS / Phosh, `aarch64`, `.deb`/`.flatpak`)
+> - **Sailfish OS Devices** (Sailfish OS 4.x / Jolla, `aarch64`/`armv7hl`, `.rpm`)
+> - **Fairphone** (/e/OS / Fairphone OS / CalyxOS, `arm64-v8a`, `.apk`)
+> - **Volla Phone** (Volla OS / Ubuntu Touch, `arm64-v8a`, `.click`/`.apk`)
+> - **GrapheneOS on Pixel** (GrapheneOS Hardened Android, `arm64-v8a`, `.apk`)
+> - **Mudita Pure / Punkt MP02** (MuditaOS / RTOS / AOSP Minimal, `armv7`/`cortex-m`, `.bin`/`.apk`)
+> - **The Minimal Phone** (MinimalOS E-Ink Android, `arm64-v8a`, `.apk`)
+
+> [!IMPORTANT]
+> **Dynamic Multilingual Help Aliases**:
+> The slash command `/help` dynamically generates an alternative command keyword translated directly from English into the user's selected installer language (e.g. Spanish $\rightarrow$ `/ayuda`, French $\rightarrow$ `/aide`, German $\rightarrow$ `/hilfe`, Japanese $\rightarrow$ `/tasukete` / `/ヘルプ`, Chinese $\rightarrow$ `/帮助`, Portuguese $\rightarrow$ `/ajuda`, etc.), ensuring native comfort while retaining English as the default.
 
 ---
 
@@ -44,7 +57,8 @@ focused-franklin/
 │       │   ├── android/
 │       │   └── chromeos/
 │       ├── microsoft/
-│       │   └── windows/
+│       │   ├── windows/
+│       │   └── windows_phone/
 │       ├── linux/
 │       ├── bsd/
 │       ├── blackberry/
@@ -55,9 +69,9 @@ focused-franklin/
 │       ├── styles.css                     # High-performance CSS (no heavy frameworks, zero layout shifts)
 │       ├── app.js                         # Core state management, UI reactivity, and builder orchestrator
 │       ├── os_database.js                 # Comprehensive global OS registry (100+ OSes, kernels, ABIs, formats)
-│       ├── agent_engine.js                # Slash command parser (/libre, /help, /checkmark, /checkoff, tickets)
+│       ├── agent_engine.js                # Slash command parser (/libre, /help + dynamic localized alias, tickets)
 │       ├── ticket_store.js                # State snapshot manager with timeline history and rollback engine
-│       ├── i18n.js                        # Multilingual documentation & UI localization (English, Spanish, etc.)
+│       ├── i18n.js                        # Dynamic i18n localization & translation engine
 │       ├── packager.js                    # Package naming engine, file generator, and manifest builder
 │       └── qwertyforte.config.json        # Portable project target configuration (import/export ready)
 ├── docs/                                  # Audited documentation for novices and expert engineers
@@ -73,7 +87,7 @@ focused-franklin/
 
 ### 1. Global Operating System Registry (`tools/qwertyforte/os_database.js`)
 #### [NEW] [`os_database.js`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/tools/qwertyforte/os_database.js)
-- Registry of **9 Core Pre-Enlisted Brands** with their 3-tier version matrices:
+- Registry of **10 Core Pre-Enlisted Brands** with their 3-tier version matrices:
   - **Apple (iOS)**:
     - *Newest*: iOS 18.0 (`arm64`, `.ipa`) [Active]
     - *Most Popular*: iOS 17.5 (`arm64`, `.ipa`) [Active]
@@ -95,6 +109,10 @@ focused-franklin/
     - *Most Popular*: Windows 10 22H2 (`x86_64`, `.msix`) [Active]
     - *Oldest Supported*: Windows 3.1 (`x86`/`i286`, `.exe`) [Option available]
     - *Additional Options*: Windows 8.1, Windows 7 SP1, Windows XP SP3, Windows 95/98 [Options available]
+  - **Microsoft (Windows Phone)**:
+    - *Newest*: Windows 10 Mobile Build 1709 (`armv7`/`arm64`, `.appx`) [Active]
+    - *Most Popular*: Windows Phone 8.1 Lumia Denim (`armv7`, `.xap`/`.appx`) [Active]
+    - *Oldest Supported*: Windows Phone 7.5 Mango / Windows Mobile 6.5 (`armv7`/`armv5`, `.xap`/`.cab`) [Active]
   - **Linux**:
     - *Newest*: Ubuntu 24.04 LTS / Kernel 6.10 (`x86_64`, `.deb`/`.AppImage`) [Active]
     - *Most Popular*: Ubuntu 22.04 LTS / Debian 12 (`x86_64`, `.deb`) [Active]
@@ -111,7 +129,16 @@ focused-franklin/
     - *Newest*: Symbian Belle FP2 (Nokia 808) (`armv7`, `.sisx`) [Active]
     - *Most Popular*: Symbian S60 5th Edition / Symbian^1 (`armv6`, `.sisx`) [Active]
     - *Oldest Supported*: Symbian S60 1st/2nd Edition (`armv4t`, `.sis`) [Active]
-- Searchable database indexing 100+ global OS platforms (Fedora, Arch, Alpine, NetBSD, Haiku, QNX, FreeRTOS, Zephyr, KaiOS, Tizen, Sailfish, DOS, watchOS, tvOS, visionOS, RISC OS, AmigaOS, etc.) with real-time autocomplete.
+- **Privacy, Minimalist & Specialized Devices in Registry (Searchable/On-Demand)**:
+  - PinePhone / PinePhone Pro
+  - Purism Librem 5
+  - Sailfish OS Devices
+  - Fairphone
+  - Volla Phone
+  - GrapheneOS on Pixel
+  - Mudita Pure / Punkt MP02
+  - The Minimal Phone
+  - Plus 100+ global OS platforms (Fedora, Arch, Alpine, NetBSD, Haiku, QNX, FreeRTOS, Zephyr, KaiOS, Tizen, DOS, watchOS, tvOS, visionOS, RISC OS, AmigaOS, etc.) with real-time autocomplete.
 
 ---
 
@@ -123,7 +150,7 @@ focused-franklin/
   - Slash command mode (`/`): Triggers the AI Agent assistant.
 - **Supported Slash Commands**:
   - `/libre [prompt]`: Free-form conversational agent inquiries regarding architecture, build targets, or toolchains.
-  - `/help [topic]` (and multilingual alias `/ayuda [tema]`): Contextual documentation and usage assistance.
+  - `/help [topic]` + Dynamic Localized Alias: Contextual documentation and usage assistance in English or the translated alias corresponding to the installation language (e.g. `/ayuda`, `/aide`, `/hilfe`, `/tasukete`, `/帮助`, `/ajuda`).
   - `/checkmark [prompt]`: Intelligent semantic batch activation:
     - *Temporal Filters*: e.g. `"/checkmark all operating systems released during 2018's FIFA worldcup"`.
     - *Publication Filters*: e.g. `"/checkmark all operating systems mentioned in the Times magazine"`.
@@ -142,7 +169,7 @@ focused-franklin/
 #### [NEW] [`docs/ARCHITECTURE.md`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/docs/ARCHITECTURE.md)
 #### [NEW] [`docs/USER_GUIDE.md`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/docs/USER_GUIDE.md)
 - Audited, highly readable code and documentation crafted for both novice developers and senior audit engineers.
-- Interactive language selector during setup/runtime (English pre-activated, with full Spanish `/ayuda` translation, and extensible dictionaries for French, German, Japanese, Chinese).
+- Interactive language selector during setup/runtime: English baseline default + seamless switching to user's chosen language with automatic slash-command alias mapping.
 
 ---
 
@@ -150,7 +177,7 @@ focused-franklin/
 #### [NEW] [`packager.js`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/tools/qwertyforte/packager.js)
 - Strict compliance with requested naming formula:
   $$\text{FileName} = \text{App Name} + \text{"\_"} + \text{Version Name} + \text{"\_"} + \text{Version Number} + \text{"\_"} + \text{Target OS} + \text{"\_"} + \text{OS Version} + \text{"\_"} + \text{Microprocessor Type} + \text{Extension}$$
-  *Example*: `FocusedApp_Production_v1.0.0_Microsoft_Windows_11_24H2_x86_64.msix`
+  *Example*: `FocusedApp_Production_v1.0.0_Microsoft_Windows_Phone_10_Mobile_arm64.appx`
 - Generation of spec-compliant package bundle structures, manifests, SHA-256 integrity checksums, and deployment descriptors organized under `dist/builds/[Brand]/[OS_Slug]/[Arch]/`.
 
 ---
@@ -176,13 +203,13 @@ focused-franklin/
 
 ### Automated & Functional Tests
 1. **Initial Matrix Verification**:
-   - Verify pre-activated targets across all 9 brands (Apple iOS, Apple macOS, Google Android, Google ChromeOS, Microsoft Windows 10/11, Linux, BSD, BlackBerry, Symbian).
-2. **Slash Command Execution**:
-   - Test `/libre`, `/help`, `/ayuda`, `/checkmark 2018`, `/checkmark ticket 1`, and `/checkoff`.
-3. **Ticket History & Rollback**:
+   - Verify pre-activated targets across all 10 brands (Apple iOS, Apple macOS, Google Android, Google ChromeOS, Microsoft Windows, Microsoft Windows Phone, Linux, BSD, BlackBerry, Symbian).
+2. **Slash Command & Dynamic Help Alias Execution**:
+   - Test `/libre`, `/help`, dynamically localized aliases (e.g. `/aide`, `/hilfe`, `/ayuda`, `/tasukete`), `/checkmark 2018`, `/checkmark ticket 1`, and `/checkoff`.
+3. **Privacy/Specialized Device Lookup**:
+   - Query PinePhone, Librem 5, GrapheneOS, Punkt MP02 in omni-bar autocomplete and test dynamic activation.
+4. **Ticket History & Rollback**:
    - Verify state snapshots are logged to `#001`, `#002`, and rollback cleanly restores previous target states.
-4. **Multilingual (i18n) Switching**:
-   - Toggle language from English to Spanish and verify UI labels, help outputs, and docs reflect the selection.
 5. **Package Generation & File Output**:
    - Execute package generation and verify the `dist/builds/` hierarchy and naming formats.
 
