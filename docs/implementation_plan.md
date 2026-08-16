@@ -1,6 +1,6 @@
 # Implementation Plan: QwertyForte Cross-Platform Target Control Panel & Packager
 
-Build **QwertyForte**, a portable, high-performance developer control panel, build matrix orchestrator, and multi-OS packaging engine. QwertyForte enables granular activation/deactivation of target operating systems across legacy and modern ecosystems, generates spec-compliant application installation packages with standardized naming, features an embedded AI agentic slash-command omni-bar, provides a comprehensive global OS registry with real-time autocomplete, and includes a full state-ticket history system with multilingual documentation.
+Build **QwertyForte**, a portable, high-performance developer control panel, build matrix orchestrator, and multi-OS packaging engine. QwertyForte enables granular activation/deactivation of target operating systems across legacy and modern ecosystems, provides a dedicated **Project Languages Tab** for managing internationalization/locale target matrices, generates spec-compliant application installation packages with standardized naming, features an embedded AI agentic slash-command omni-bar, provides comprehensive global OS & Language registries with real-time autocomplete, and includes a full state-ticket history system with multilingual documentation.
 
 ---
 
@@ -18,6 +18,14 @@ Build **QwertyForte**, a portable, high-performance developer control panel, bui
 > - Added **Linux** (Newest: Ubuntu 24.04 LTS / Kernel 6.10, Most Popular: Ubuntu 22.04 LTS / Debian 12, Oldest: Slackware 1.0 / Linux 1.0).
 > - Added **BSD** (Newest: FreeBSD 14.1 / OpenBSD 7.5, Most Popular: FreeBSD 13.3, Oldest: 386BSD 0.1 / FreeBSD 1.0).
 > - Each of these 10 core OS brands comes pre-activated with the 3-tier matrix (Newest, Most Popular, Oldest Supported).
+
+> [!IMPORTANT]
+> **New Dedicated "Supported Languages" Tab**:
+> Added a first-class **Supported Languages Tab** in QwertyForte:
+> - Manages project-level internationalization (i18n) target languages and regional locale codes (e.g., `en-US`, `es-MX`, `es-ES`, `fr-FR`, `de-DE`, `ja-JP`, `zh-CN`, `ar-SA`, `pt-BR`, `hi-IN`, `ru-RU`, etc.).
+> - English is pre-activated by default.
+> - Fully integrated with the **OmniBar** engine: developers can search/autocomplete world languages, or execute semantic slash commands (e.g. `"/checkmark all official UN languages"`, `"/checkmark all Romance languages"`, `"/checkmark languages spoken by over 100M people"`, `"/checkoff all Scandinavian languages"`).
+> - All language matrix changes generate numbered state tickets (`#001`, `#002`...) for history audit and rollback.
 
 > [!IMPORTANT]
 > **Privacy, Niche, and Minimalist Mobile Systems in Registry**:
@@ -66,10 +74,11 @@ focused-franklin/
 │       └── symbian/
 ├── tools/
 │   └── qwertyforte/                       # QwertyForte Developer Control Panel (Isolated from end-user runtime)
-│       ├── index.html                     # Snappy, zero-bloat, dark-mode developer control panel UI
+│       ├── index.html                     # Snappy, zero-bloat, dark-mode developer control panel UI (Tabs: OS Targets, Languages, Packager)
 │       ├── styles.css                     # High-performance CSS (no heavy frameworks, zero layout shifts)
-│       ├── app.js                         # Core state management, UI reactivity, and builder orchestrator
+│       ├── app.js                         # Core state management, UI reactivity, tab switching, and orchestrator
 │       ├── os_database.js                 # Comprehensive global OS registry (100+ OSes, kernels, ABIs, formats)
+│       ├── language_database.js           # Comprehensive global Language registry (200+ languages, locales, scripts, families)
 │       ├── agent_engine.js                # Slash command parser (/libre, /freeform, reserved multilingual /help, tickets)
 │       ├── ticket_store.js                # State snapshot manager with timeline history and rollback engine
 │       ├── i18n.js                        # Dynamic i18n localization & reserved keywords dictionary
@@ -131,41 +140,44 @@ focused-franklin/
     - *Most Popular*: Symbian S60 5th Edition / Symbian^1 (`armv6`, `.sisx`) [Active]
     - *Oldest Supported*: Symbian S60 1st/2nd Edition (`armv4t`, `.sis`) [Active]
 - **Privacy, Minimalist & Specialized Devices in Registry (Searchable/On-Demand)**:
-  - PinePhone / PinePhone Pro
-  - Purism Librem 5
-  - Sailfish OS Devices
-  - Fairphone
-  - Volla Phone
-  - GrapheneOS on Pixel
-  - Mudita Pure / Punkt MP02
-  - The Minimal Phone
+  - PinePhone / PinePhone Pro, Purism Librem 5, Sailfish OS Devices, Fairphone, Volla Phone, GrapheneOS on Pixel, Mudita Pure / Punkt MP02, The Minimal Phone.
   - Plus 100+ global OS platforms (Fedora, Arch, Alpine, NetBSD, Haiku, QNX, FreeRTOS, Zephyr, KaiOS, Tizen, DOS, watchOS, tvOS, visionOS, RISC OS, AmigaOS, etc.) with real-time autocomplete.
 
 ---
 
-### 2. Omni-Bar, Agentic Slash Commands & State Ticket Engine
+### 2. Global Language Registry & Languages Tab (`tools/qwertyforte/language_database.js`)
+#### [NEW] [`language_database.js`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/tools/qwertyforte/language_database.js)
+- Comprehensive database of **200+ World Languages & Locales**:
+  - Organized into Regions (Americas, Europe, Asia-Pacific, Middle East & Africa) and Language Families (Indo-European, Sino-Tibetan, Afroasiatic, Austronesian, Japonic, Niger-Congo, etc.).
+  - Metadata: ISO 639-1 / 639-2 codes, BCP-47 locale tags, native endonyms, script direction (LTR/RTL), estimated speaker count, and official status (e.g. UN official language, EU official language).
+  - Pre-activated by default: **English** (`en` / `en-US` / `en-GB`).
+  - Interactive activation/deactivation cards with regional collapsible accordions.
+
+---
+
+### 3. Omni-Bar, Agentic Slash Commands & State Ticket Engine
 #### [NEW] [`agent_engine.js`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/tools/qwertyforte/agent_engine.js)
 #### [NEW] [`ticket_store.js`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/tools/qwertyforte/ticket_store.js)
-- **Unified Omni-Bar**:
-  - Regular typing: Instant OS search with autocomplete dropdown.
+- **Unified Omni-Bar across Tabs**:
+  - Automatically context-aware: searches Operating Systems on the "OS Targets" tab and Languages on the "Supported Languages" tab.
   - Slash command mode (`/`): Triggers the AI Agent assistant.
 - **Supported Slash Commands**:
   - `/libre [prompt]` and `/freeform [prompt]`: Free-form conversational agent inquiries regarding architecture, build targets, or toolchains.
   - `/help [topic]` + Global Reserved Multilingual Help Keywords: Complete registry of protected keywords (`ayuda`, `aide`, `hilfe`, `aiuto`, `ajuda`, `pomoc`, `hjelp`, `hjalp`, `apua`, `hjælp`, `yardim`, `segitseg`, `tasukete`, `bangzhu`, `doyoume`, `madad`, `musaaeda`, `ezer`, `socorro`, `auxilio`) strictly reserved to always render the Help subsystem.
   - `/checkmark [prompt]`: Intelligent semantic batch activation:
-    - *Temporal Filters*: e.g. `"/checkmark all operating systems released during 2018's FIFA worldcup"`.
-    - *Publication Filters*: e.g. `"/checkmark all operating systems mentioned in the Times magazine"`.
+    - *OS Targets Filters*: e.g. `"/checkmark all operating systems released during 2018's FIFA worldcup"`, `"/checkmark all operating systems mentioned in the Times magazine"`.
+    - *Language Filters*: e.g. `"/checkmark all official UN languages"`, `"/checkmark all Romance languages"`, `"/checkmark all languages with over 100 million speakers"`.
     - *File Parsing*: e.g. `"/checkmark all operating systems mentioned in [file.html, .txt, .pdf, .doc]"`.
     - *Ticket Rollback*: e.g. `"/checkmark ticket 12"` or `"/checkmark go back to how it was this morning"`.
-  - `/checkoff [prompt]`: Semantic batch deactivation.
+  - `/checkoff [prompt]`: Semantic batch deactivation for both OS targets and languages.
 - **State Ticket System**:
   - Every activation/deactivation generates a discrete ticket: `#001`, `#002`, etc.
-  - Captures timestamp, action summary, and full target state snapshot.
+  - Captures timestamp, action summary, and full target state snapshot across both OS targets and languages.
   - Enables instant one-click or command-driven state rollbacks.
 
 ---
 
-### 3. Documentation & Multilingual Localization (i18n)
+### 4. Documentation & Multilingual Localization (i18n)
 #### [NEW] [`i18n.js`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/tools/qwertyforte/i18n.js)
 #### [NEW] [`docs/ARCHITECTURE.md`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/docs/ARCHITECTURE.md)
 #### [NEW] [`docs/USER_GUIDE.md`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/docs/USER_GUIDE.md)
@@ -174,27 +186,27 @@ focused-franklin/
 
 ---
 
-### 4. Package Engine & Naming Convention (`tools/qwertyforte/packager.js`)
+### 5. Package Engine & Naming Convention (`tools/qwertyforte/packager.js`)
 #### [NEW] [`packager.js`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/tools/qwertyforte/packager.js)
 - Strict compliance with requested naming formula:
   $$\text{FileName} = \text{App Name} + \text{"\_"} + \text{Version Name} + \text{"\_"} + \text{Version Number} + \text{"\_"} + \text{Target OS} + \text{"\_"} + \text{OS Version} + \text{"\_"} + \text{Microprocessor Type} + \text{Extension}$$
   *Example*: `FocusedApp_Production_v1.0.0_Microsoft_Windows_Phone_10_Mobile_arm64.appx`
-- Generation of spec-compliant package bundle structures, manifests, SHA-256 integrity checksums, and deployment descriptors organized under `dist/builds/[Brand]/[OS_Slug]/[Arch]/`.
+- Generates package bundles, manifests, SHA-256 integrity checksums, and language bundle descriptors organized under `dist/builds/[Brand]/[OS_Slug]/[Arch]/`.
 
 ---
 
-### 5. QwertyForte Control Panel Interface (`tools/qwertyforte/index.html` & `styles.css` & `app.js`)
+### 6. QwertyForte Control Panel Interface (`tools/qwertyforte/index.html` & `styles.css` & `app.js`)
 #### [NEW] [`index.html`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/tools/qwertyforte/index.html)
 #### [NEW] [`styles.css`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/tools/qwertyforte/styles.css)
 #### [NEW] [`app.js`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/tools/qwertyforte/app.js)
-- Responsive dark-mode dashboard with sub-millisecond interaction speeds.
-- Collapsible brand accordions with per-version toggles and chip badges.
+- Responsive dark-mode dashboard with tab navigation: **OS Targets**, **Supported Languages**, **Build & Packaging**, and **Ticket History**.
+- Fast search/filter input with autocomplete on all tabs.
 - Live ticket history timeline drawer and omni-bar command terminal.
-- Single-click package compilation and portable JSON profile import/export.
+- Single-click package compilation and portable JSON profile import/export (`qwertyforte.config.json` containing both OS and language matrices).
 
 ---
 
-### 6. Portable PowerShell Server & CLI (`serve-qwertyforte.ps1`)
+### 7. Portable PowerShell Server & CLI (`serve-qwertyforte.ps1`)
 #### [NEW] [`serve-qwertyforte.ps1`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/serve-qwertyforte.ps1)
 - Zero-dependency local server and automated packaging CLI.
 
@@ -204,15 +216,18 @@ focused-franklin/
 
 ### Automated & Functional Tests
 1. **Initial Matrix Verification**:
-   - Verify pre-activated targets across all 10 brands (Apple iOS, Apple macOS, Google Android, Google ChromeOS, Microsoft Windows, Microsoft Windows Phone, Linux, BSD, BlackBerry, Symbian).
-2. **Slash Command, `/freeform` & Reserved Help Keywords Execution**:
+   - Verify pre-activated OS targets across all 10 brands.
+   - Verify pre-activated default language (English) in the Languages tab.
+2. **Languages Tab & OmniBar Integration**:
+   - Test search and autocomplete for languages (e.g. Spanish, French, Japanese, Arabic).
+   - Test `/checkmark all official UN languages` and verify 6 UN languages (Arabic, Chinese, English, French, Russian, Spanish) are checkmarked.
+   - Test `/checkoff all Romance languages`.
+3. **Slash Command, `/freeform` & Reserved Help Keywords Execution**:
    - Test `/libre`, `/freeform`, and multiple reserved global help aliases (`/help`, `/ayuda`, `/aide`, `/hilfe`, `/socorro`, `/tasukete`, `/bangzhu`).
-3. **Privacy/Specialized Device Lookup**:
-   - Query PinePhone, Librem 5, GrapheneOS, Punkt MP02 in omni-bar autocomplete and test dynamic activation.
-4. **Ticket History & Rollback**:
-   - Verify state snapshots are logged to `#001`, `#002`, and rollback cleanly restores previous target states.
+4. **Ticket History & Multi-Tab Rollback**:
+   - Verify state snapshots are logged to `#001`, `#002`, and rollback cleanly restores both OS and language target states.
 5. **Package Generation & File Output**:
    - Execute package generation and verify the `dist/builds/` hierarchy and naming formats.
 
 ### Manual Verification
-- Launch QwertyForte in browser, test all interactive features, run slash commands, and verify ticket history.
+- Launch QwertyForte in browser, switch tabs, test language toggles, execute slash commands, and verify ticket history.
