@@ -32,8 +32,9 @@ Build **QwertyForte**, a portable, high-performance developer control panel, bui
 > - **The Minimal Phone** (MinimalOS E-Ink Android, `arm64-v8a`, `.apk`)
 
 > [!IMPORTANT]
-> **Dynamic Multilingual Help Aliases**:
-> The slash command `/help` dynamically generates an alternative command keyword translated directly from English into the user's selected installer language (e.g. Spanish $\rightarrow$ `/ayuda`, French $\rightarrow$ `/aide`, German $\rightarrow$ `/hilfe`, Japanese $\rightarrow$ `/tasukete` / `/ヘルプ`, Chinese $\rightarrow$ `/帮助`, Portuguese $\rightarrow$ `/ajuda`, etc.), ensuring native comfort while retaining English as the default.
+> **Global Reserved Multilingual Help Keywords & `/freeform` Alias**:
+> - The command parser enforces a **Global Reserved Help Keywords Registry** across all known world languages (`help`, `ayuda`, `aide`, `hilfe`, `aiuto`, `ajuda`, `pomoc`, `hjelp`, `hjalp`, `apua`, `hjælp`, `yardim`, `segitseg`, `tasukete`, `bangzhu`, `doyoume`, `madad`, `musaaeda`, `ezer`, `socorro`, `auxilio`, etc.). These words are strictly reserved and guaranteed to always route to the Help subsystem.
+> - Added `/freeform` as an official, interchangeable alias for `/libre` for open-ended AI assistant interactions.
 
 ---
 
@@ -69,9 +70,9 @@ focused-franklin/
 │       ├── styles.css                     # High-performance CSS (no heavy frameworks, zero layout shifts)
 │       ├── app.js                         # Core state management, UI reactivity, and builder orchestrator
 │       ├── os_database.js                 # Comprehensive global OS registry (100+ OSes, kernels, ABIs, formats)
-│       ├── agent_engine.js                # Slash command parser (/libre, /help + dynamic localized alias, tickets)
+│       ├── agent_engine.js                # Slash command parser (/libre, /freeform, reserved multilingual /help, tickets)
 │       ├── ticket_store.js                # State snapshot manager with timeline history and rollback engine
-│       ├── i18n.js                        # Dynamic i18n localization & translation engine
+│       ├── i18n.js                        # Dynamic i18n localization & reserved keywords dictionary
 │       ├── packager.js                    # Package naming engine, file generator, and manifest builder
 │       └── qwertyforte.config.json        # Portable project target configuration (import/export ready)
 ├── docs/                                  # Audited documentation for novices and expert engineers
@@ -149,8 +150,8 @@ focused-franklin/
   - Regular typing: Instant OS search with autocomplete dropdown.
   - Slash command mode (`/`): Triggers the AI Agent assistant.
 - **Supported Slash Commands**:
-  - `/libre [prompt]`: Free-form conversational agent inquiries regarding architecture, build targets, or toolchains.
-  - `/help [topic]` + Dynamic Localized Alias: Contextual documentation and usage assistance in English or the translated alias corresponding to the installation language (e.g. `/ayuda`, `/aide`, `/hilfe`, `/tasukete`, `/帮助`, `/ajuda`).
+  - `/libre [prompt]` and `/freeform [prompt]`: Free-form conversational agent inquiries regarding architecture, build targets, or toolchains.
+  - `/help [topic]` + Global Reserved Multilingual Help Keywords: Complete registry of protected keywords (`ayuda`, `aide`, `hilfe`, `aiuto`, `ajuda`, `pomoc`, `hjelp`, `hjalp`, `apua`, `hjælp`, `yardim`, `segitseg`, `tasukete`, `bangzhu`, `doyoume`, `madad`, `musaaeda`, `ezer`, `socorro`, `auxilio`) strictly reserved to always render the Help subsystem.
   - `/checkmark [prompt]`: Intelligent semantic batch activation:
     - *Temporal Filters*: e.g. `"/checkmark all operating systems released during 2018's FIFA worldcup"`.
     - *Publication Filters*: e.g. `"/checkmark all operating systems mentioned in the Times magazine"`.
@@ -169,7 +170,7 @@ focused-franklin/
 #### [NEW] [`docs/ARCHITECTURE.md`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/docs/ARCHITECTURE.md)
 #### [NEW] [`docs/USER_GUIDE.md`](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/docs/USER_GUIDE.md)
 - Audited, highly readable code and documentation crafted for both novice developers and senior audit engineers.
-- Interactive language selector during setup/runtime: English baseline default + seamless switching to user's chosen language with automatic slash-command alias mapping.
+- Interactive language selector during setup/runtime: English baseline default + seamless switching to user's chosen language with automatic slash-command alias mapping and reserved keywords protection.
 
 ---
 
@@ -204,8 +205,8 @@ focused-franklin/
 ### Automated & Functional Tests
 1. **Initial Matrix Verification**:
    - Verify pre-activated targets across all 10 brands (Apple iOS, Apple macOS, Google Android, Google ChromeOS, Microsoft Windows, Microsoft Windows Phone, Linux, BSD, BlackBerry, Symbian).
-2. **Slash Command & Dynamic Help Alias Execution**:
-   - Test `/libre`, `/help`, dynamically localized aliases (e.g. `/aide`, `/hilfe`, `/ayuda`, `/tasukete`), `/checkmark 2018`, `/checkmark ticket 1`, and `/checkoff`.
+2. **Slash Command, `/freeform` & Reserved Help Keywords Execution**:
+   - Test `/libre`, `/freeform`, and multiple reserved global help aliases (`/help`, `/ayuda`, `/aide`, `/hilfe`, `/socorro`, `/tasukete`, `/bangzhu`).
 3. **Privacy/Specialized Device Lookup**:
    - Query PinePhone, Librem 5, GrapheneOS, Punkt MP02 in omni-bar autocomplete and test dynamic activation.
 4. **Ticket History & Rollback**:
