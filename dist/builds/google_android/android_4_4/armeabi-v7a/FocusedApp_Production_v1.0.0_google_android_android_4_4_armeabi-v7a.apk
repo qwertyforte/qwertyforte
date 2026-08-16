@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "android_4_4",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".apk",
+    "targetArch":  "armeabi-v7a",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "google_android",
+    "generatedAt":  "2026-08-16T17:54:11.6645033-06:00"
+}

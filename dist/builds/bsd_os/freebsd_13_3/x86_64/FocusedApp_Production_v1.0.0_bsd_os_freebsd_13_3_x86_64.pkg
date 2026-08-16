@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "freebsd_13_3",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".pkg",
+    "targetArch":  "x86_64",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "bsd_os",
+    "generatedAt":  "2026-08-16T17:54:11.7561851-06:00"
+}

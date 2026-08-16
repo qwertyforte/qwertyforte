@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "symbian_belle_fp2",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".sisx",
+    "targetArch":  "armv7",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "symbian_os",
+    "generatedAt":  "2026-08-16T17:54:11.7913880-06:00"
+}

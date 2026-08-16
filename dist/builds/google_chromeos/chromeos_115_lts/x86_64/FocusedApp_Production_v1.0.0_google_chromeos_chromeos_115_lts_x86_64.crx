@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "chromeos_115_lts",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".crx",
+    "targetArch":  "x86_64",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "google_chromeos",
+    "generatedAt":  "2026-08-16T17:54:11.6783813-06:00"
+}

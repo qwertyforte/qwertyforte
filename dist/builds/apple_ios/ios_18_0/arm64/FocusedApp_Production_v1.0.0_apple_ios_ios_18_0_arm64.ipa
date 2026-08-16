@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "ios_18_0",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".ipa",
+    "targetArch":  "arm64",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "apple_ios",
+    "generatedAt":  "2026-08-16T17:54:11.5819440-06:00"
+}

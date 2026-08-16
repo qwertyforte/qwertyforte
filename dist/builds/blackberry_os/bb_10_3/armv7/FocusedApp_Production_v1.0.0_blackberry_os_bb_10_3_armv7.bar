@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "bb_10_3",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".bar",
+    "targetArch":  "armv7",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "blackberry_os",
+    "generatedAt":  "2026-08-16T17:54:11.7710840-06:00"
+}

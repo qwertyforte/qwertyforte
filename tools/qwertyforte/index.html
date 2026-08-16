@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QwertyForte | Universal Target Matrix & Packaging Scaffolding</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header class="top-header">
+    <div class="brand-section">
+      <span class="logo-badge">QWERTYFORTE</span>
+      <div class="brand-info">
+        <h1>QwertyForte Control Panel</h1>
+        <p>Universal Cross-Platform Build Matrix & Developer Scaffolding</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <select id="global-lang-select" class="lang-select" title="Documentation & Interface Language">
+        <option value="en" selected>English (Default)</option>
+        <option value="es">Español (/ayuda)</option>
+        <option value="fr">Français (/aide)</option>
+        <option value="de">Deutsch (/hilfe)</option>
+        <option value="ja">日本語 (/tasukete)</option>
+        <option value="zh">简体中文 (/bangzhu)</option>
+      </select>
+      <button class="btn btn-secondary" onclick="alert(window.qwertyApp.exportConfig())">Export Config</button>
+      <button class="btn btn-primary" onclick="window.qwertyApp.currentTab='packager'; document.querySelector('[data-tab=packager]').click();">Generate Builds</button>
+    </div>
+  </header>
+
+  <!-- High-Level Stats Overview Bar -->
+  <section class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-label">Active Target Packages</span>
+      <span class="stat-value" id="stat-active-targets">23</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label">Supported Languages</span>
+      <span class="stat-value" id="stat-active-langs">1</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label">Core Brands Indexed</span>
+      <span class="stat-value" id="stat-total-brands">10</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label">Est. Build Bundle Size</span>
+      <span class="stat-value" id="stat-est-footprint">~41.4 MB</span>
+    </div>
+  </section>
+
+  <!-- Unified OmniBar Search & Slash Command Terminal -->
+  <div class="omnibar-container">
+    <div class="omnibar-wrapper">
+      <span class="omnibar-icon">⚡</span>
+      <input type="text" id="omnibar-input" class="omnibar-input" placeholder="Search 100+ OSes, languages, or type agent slash commands (/libre, /help, /checkmark, /checkoff)..." autocomplete="off">
+      <div id="omnibar-dropdown" class="omnibar-dropdown"></div>
+    </div>
+  </div>
+
+  <!-- Agent Notice Banner for Slash Command Responses -->
+  <div id="agent-banner" class="agent-banner"></div>
+
+  <!-- Navigation Tabs -->
+  <nav class="tabs-nav">
+    <button class="tab-btn active" data-tab="os-targets">OS Targets (10 Brands)</button>
+    <button class="tab-btn" data-tab="languages">Supported Languages (200+)</button>
+    <button class="tab-btn" data-tab="packager">Build & Packaging</button>
+    <button class="tab-btn" data-tab="tickets">Ticket History (Non-Empty)</button>
+    <button class="tab-btn" data-tab="docs">Standard & Architecture</button>
+  </nav>
+
+  <!-- Main Content Workspace -->
+  <main class="main-workspace">
+
+    <!-- Tab 1: OS Targets -->
+    <div id="tab-pane-os-targets" class="tab-pane active">
+      <div id="brands-grid-container" class="brands-grid"></div>
+    </div>
+
+    <!-- Tab 2: Supported Languages -->
+    <div id="tab-pane-languages" class="tab-pane">
+      <div class="lang-toolbar">
+        <button class="btn btn-secondary btn-sm" onclick="window.qwertyApp.batchToggleLanguages('un', true)">Select All UN (6)</button>
+        <button class="btn btn-secondary btn-sm" onclick="window.qwertyApp.batchToggleLanguages('eu', true)">Select All EU</button>
+        <button class="btn btn-secondary btn-sm" onclick="window.qwertyApp.batchToggleLanguages('romance', true)">Select Romance</button>
+        <button class="btn btn-secondary btn-sm" onclick="window.qwertyApp.batchToggleLanguages('germanic', true)">Select Germanic</button>
+        <button class="btn btn-secondary btn-sm" onclick="window.qwertyApp.batchToggleLanguages('all', false)">Reset to English Only</button>
+      </div>
+      <div id="languages-grid-container" class="languages-grid"></div>
+    </div>
+
+    <!-- Tab 3: Build & Packaging -->
+    <div id="tab-pane-packager" class="tab-pane">
+      <div class="packager-container">
+        <div class="app-meta-form">
+          <div class="form-group">
+            <label for="meta-app-name">App Name</label>
+            <input type="text" id="meta-app-name" value="FocusedApp">
+          </div>
+          <div class="form-group">
+            <label for="meta-ver-name">Version Name</label>
+            <input type="text" id="meta-ver-name" value="Production">
+          </div>
+          <div class="form-group">
+            <label for="meta-ver-num">Version Number</label>
+            <input type="text" id="meta-ver-num" value="v1.0.0">
+          </div>
+        </div>
+
+        <div class="packages-table-wrapper">
+          <table class="packages-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Generated Standard Package Name</th>
+                <th>Target Arch</th>
+                <th>Format</th>
+                <th>SHA-256 Hash</th>
+                <th>Output Hierarchy Path</th>
+              </tr>
+            </thead>
+            <tbody id="packages-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: Ticket History -->
+    <div id="tab-pane-tickets" class="tab-pane">
+      <div id="tickets-timeline-container" class="tickets-timeline"></div>
+    </div>
+
+    <!-- Tab 5: Standard Documentation -->
+    <div id="tab-pane-docs" class="tab-pane">
+      <div class="docs-view">
+        <h2>The QwertyForte Standard</h2>
+        <p>QwertyForte is a flexible, standalone build matrix scaffolding standard and developer control panel. It is designed to maximize developer startup speed and fine-tune platform reach without coupling to consumer application binaries.</p>
+        
+        <h3>Core Invariants</h3>
+        <ul>
+          <li><strong>Absolute Isolation:</strong> QwertyForte tooling code is strictly isolated and never included in consumer runtime distribution.</li>
+          <li><strong>Security-First Posture:</strong> Deterministic SHA-256 integrity verification, zero dynamic evaluations, defense-in-depth.</li>
+          <li><strong>Extreme Performance:</strong> Sub-millisecond reactive rendering, negligible RAM footprint.</li>
+          <li><strong>Non-Empty Ticket History:</strong> Guaranteed continuous tracking with Genesis Baseline Ticket #001, exact deltas (+/-), and source attribution.</li>
+          <li><strong>Standard Package Naming:</strong> <code>AppName_VersionName_VersionNumber_TargetOS_OSVersion_Arch.ext</code></li>
+        </ul>
+
+        <h3>OmniBar Agent Commands</h3>
+        <p>Type slash commands directly in the top search bar:</p>
+        <ul>
+          <li><code>/libre [prompt]</code> or <code>/freeform [prompt]</code>: AI Assistant inquiry dialogue.</li>
+          <li><code>/help</code> (or translated alias <code>/ayuda</code>, <code>/aide</code>, <code>/hilfe</code>, etc.): Contextual help.</li>
+          <li><code>/checkmark [criteria]</code>: Batch activate matching operating systems, languages, or rollback to a past ticket.</li>
+          <li><code>/checkoff [criteria]</code>: Batch deactivate matching targets.</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <span>QwertyForte Architecture Standard &copy; 2026. Standalone Developer Tooling.</span>
+    <span>Zero-Dependency | Cloud-Portable | Multi-Agent Interoperable</span>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="os_database.js"></script>
+  <script src="language_database.js"></script>
+  <script src="ticket_store.js"></script>
+  <script src="i18n.js"></script>
+  <script src="agent_engine.js"></script>
+  <script src="packager.js"></script>
+  <script src="mcp_bridge.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

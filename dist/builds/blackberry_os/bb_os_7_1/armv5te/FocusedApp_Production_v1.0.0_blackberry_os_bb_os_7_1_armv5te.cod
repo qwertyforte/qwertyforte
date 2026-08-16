@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "bb_os_7_1",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".cod",
+    "targetArch":  "armv5te",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "blackberry_os",
+    "generatedAt":  "2026-08-16T17:54:11.7767079-06:00"
+}

@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "windows_10_22h2",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".msix",
+    "targetArch":  "x86_64",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "microsoft_windows",
+    "generatedAt":  "2026-08-16T17:54:11.6966152-06:00"
+}

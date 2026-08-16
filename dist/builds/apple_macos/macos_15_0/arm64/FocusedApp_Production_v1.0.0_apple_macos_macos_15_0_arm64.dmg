@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "macos_15_0",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".dmg",
+    "targetArch":  "arm64",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "apple_macos",
+    "generatedAt":  "2026-08-16T17:54:11.6357855-06:00"
+}

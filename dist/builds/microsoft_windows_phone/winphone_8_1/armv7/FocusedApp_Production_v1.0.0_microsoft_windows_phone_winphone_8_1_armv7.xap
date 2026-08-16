@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "winphone_8_1",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".xap",
+    "targetArch":  "armv7",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "microsoft_windows_phone",
+    "generatedAt":  "2026-08-16T17:54:11.7169210-06:00"
+}

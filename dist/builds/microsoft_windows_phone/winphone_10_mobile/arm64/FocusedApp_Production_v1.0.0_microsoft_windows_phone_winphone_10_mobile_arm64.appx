@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "winphone_10_mobile",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".appx",
+    "targetArch":  "arm64",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "microsoft_windows_phone",
+    "generatedAt":  "2026-08-16T17:54:11.7114919-06:00"
+}

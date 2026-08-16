@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "linux_slackware_1_0",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".tar.gz",
+    "targetArch":  "i386",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "linux_os",
+    "generatedAt":  "2026-08-16T17:54:11.7418592-06:00"
+}

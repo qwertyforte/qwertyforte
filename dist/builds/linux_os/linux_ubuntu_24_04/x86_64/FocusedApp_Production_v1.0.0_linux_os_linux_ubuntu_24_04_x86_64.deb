@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "linux_ubuntu_24_04",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".deb",
+    "targetArch":  "x86_64",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "linux_os",
+    "generatedAt":  "2026-08-16T17:54:11.7296810-06:00"
+}

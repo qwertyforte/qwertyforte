@@ -1,0 +1,46 @@
+{
+  "standard": "QwertyForte",
+  "standardVersion": "1.0.0",
+  "appName": "FocusedApp",
+  "versionName": "Production",
+  "versionNumber": "v1.0.0",
+  "lastUpdated": "2026-08-16T17:50:00.000Z",
+  "activeOSTargets": [
+    { "brandId": "apple_ios", "versionId": "ios_18_0", "arch": "arm64", "format": ".ipa" },
+    { "brandId": "apple_ios", "versionId": "ios_17_5", "arch": "arm64", "format": ".ipa" },
+    { "brandId": "apple_ios", "versionId": "ios_4_3", "arch": "armv7", "format": ".ipa" },
+    { "brandId": "apple_macos", "versionId": "macos_15_0", "arch": "arm64", "format": ".dmg" },
+    { "brandId": "apple_macos", "versionId": "macos_14_0", "arch": "universal2", "format": ".dmg" },
+    { "brandId": "apple_macos", "versionId": "macos_10_6", "arch": "x86", "format": ".dmg" },
+    { "brandId": "google_android", "versionId": "android_15_0", "arch": "arm64-v8a", "format": ".apk" },
+    { "brandId": "google_android", "versionId": "android_14_0", "arch": "arm64-v8a", "format": ".apk" },
+    { "brandId": "google_android", "versionId": "android_4_4", "arch": "armeabi-v7a", "format": ".apk" },
+    { "brandId": "google_chromeos", "versionId": "chromeos_126", "arch": "x86_64", "format": ".crx" },
+    { "brandId": "google_chromeos", "versionId": "chromeos_115_lts", "arch": "x86_64", "format": ".crx" },
+    { "brandId": "google_chromeos", "versionId": "chromeos_60", "arch": "x86", "format": ".crx" },
+    { "brandId": "microsoft_windows", "versionId": "windows_11_24h2", "arch": "x86_64", "format": ".msix" },
+    { "brandId": "microsoft_windows", "versionId": "windows_10_22h2", "arch": "x86_64", "format": ".msix" },
+    { "brandId": "microsoft_windows_phone", "versionId": "winphone_10_mobile", "arch": "arm64", "format": ".appx" },
+    { "brandId": "microsoft_windows_phone", "versionId": "winphone_8_1", "arch": "armv7", "format": ".xap" },
+    { "brandId": "microsoft_windows_phone", "versionId": "winphone_7_5", "arch": "armv7", "format": ".xap" },
+    { "brandId": "linux_os", "versionId": "linux_ubuntu_24_04", "arch": "x86_64", "format": ".deb" },
+    { "brandId": "linux_os", "versionId": "linux_ubuntu_22_04", "arch": "x86_64", "format": ".deb" },
+    { "brandId": "linux_os", "versionId": "linux_slackware_1_0", "arch": "i386", "format": ".tar.gz" },
+    { "brandId": "bsd_os", "versionId": "freebsd_14_1", "arch": "x86_64", "format": ".pkg" },
+    { "brandId": "bsd_os", "versionId": "freebsd_13_3", "arch": "x86_64", "format": ".pkg" },
+    { "brandId": "bsd_os", "versionId": "bsd_386_0_1", "arch": "i386", "format": ".tar.gz" },
+    { "brandId": "blackberry_os", "versionId": "bb_10_3", "arch": "armv7", "format": ".bar" },
+    { "brandId": "blackberry_os", "versionId": "bb_os_7_1", "arch": "armv5te", "format": ".cod" },
+    { "brandId": "blackberry_os", "versionId": "bb_os_4_5", "arch": "armv5", "format": ".cod" },
+    { "brandId": "symbian_os", "versionId": "symbian_belle_fp2", "arch": "armv7", "format": ".sisx" },
+    { "brandId": "symbian_os", "versionId": "symbian_s60_5th", "arch": "armv6", "format": ".sisx" },
+    { "brandId": "symbian_os", "versionId": "symbian_s60_1st_2nd", "arch": "armv4t", "format": ".sis" }
+  ],
+  "activeLanguages": [
+    { "code": "en", "locale": "en-US", "name": "English (US)" }
+  ],
+  "genesisTicket": {
+    "ticketId": 1,
+    "summary": "Genesis Baseline Matrix Initialized (10 Brands + Default Languages)"
+  }
+}

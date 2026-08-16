@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "android_15_0",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".apk",
+    "targetArch":  "arm64-v8a",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "google_android",
+    "generatedAt":  "2026-08-16T17:54:11.6527579-06:00"
+}

@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "bsd_386_0_1",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".tar.gz",
+    "targetArch":  "i386",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "bsd_os",
+    "generatedAt":  "2026-08-16T17:54:11.7640457-06:00"
+}

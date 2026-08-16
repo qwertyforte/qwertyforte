@@ -1,0 +1,10 @@
+﻿{
+    "targetOSVersion":  "symbian_s60_1st_2nd",
+    "versionNumber":  "v1.0.0",
+    "packageFormat":  ".sis",
+    "targetArch":  "armv4t",
+    "appName":  "FocusedApp",
+    "versionName":  "Production",
+    "targetPlatform":  "symbian_os",
+    "generatedAt":  "2026-08-16T17:54:11.8055789-06:00"
+}
