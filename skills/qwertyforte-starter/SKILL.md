@@ -1,4 +1,4 @@
----
+﻿---
 name: qwertyforte-starter
 description: Fast onboarding and cross-platform target matrix orchestration using the QwertyForte development standard. Triggers on "/qforte", "/qwertyforte", or whenever the user asks to start an application with QwertyForte.
 ---
@@ -25,7 +25,7 @@ When a user triggers QwertyForte:
 
 ### Step 1: Confirm Project Metadata
 Ask the user for:
-- **Application Name** (default: `FocusedApp`)
+- **Application Name** (default: `QForteApp`)
 - **Version Name** (default: `Production`)
 - **Version Number** (default: `v1.0.0`)
 
@@ -49,3 +49,4 @@ $$\text{dist/builds/[Brand]/[OS\_Slug]/[Arch]/}$$
 
 ### Step 5: Launch & Synchronize
 Direct the user to the local QwertyForte control panel (`serve-qwertyforte.ps1` or `serve-qwertyforte.sh`) and log an insight record into `agents/insights/insights.jsonl`.
+

@@ -1,11 +1,11 @@
-# ==============================================================================
+﻿# ==============================================================================
 # QwertyForte Zero-Dependency Local Dev Server & Packaging CLI (Windows)
 # ==============================================================================
 
 param (
     [int]$Port = 8080,
     [switch]$BuildOnly = $false,
-    [string]$AppName = "FocusedApp",
+    [string]$AppName = "QForteApp",
     [string]$VersionName = "Production",
     [string]$VersionNumber = "v1.0.0"
 )
@@ -113,3 +113,4 @@ try {
     }
     $listener.Close()
 }
+

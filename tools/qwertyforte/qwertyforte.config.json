@@ -1,7 +1,7 @@
-{
+﻿{
   "standard": "QwertyForte",
   "standardVersion": "1.0.0",
-  "appName": "FocusedApp",
+  "appName": "QForteApp",
   "versionName": "Production",
   "versionNumber": "v1.0.0",
   "lastUpdated": "2026-08-16T17:50:00.000Z",
@@ -44,3 +44,4 @@
     "summary": "Genesis Baseline Matrix Initialized (10 Brands + Default Languages)"
   }
 }
+

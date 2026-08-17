@@ -1,4 +1,4 @@
-/**
+﻿/**
  * QwertyForte Application State Manager & UI Controller
  * High-Performance, Zero-Bloat Reactive Controller
  */
@@ -9,7 +9,7 @@
   class StateManager {
     constructor() {
       this.appMeta = {
-        appName: 'FocusedApp',
+        appName: 'QForteApp',
         versionName: 'Production',
         versionNumber: 'v1.0.0'
       };
@@ -420,7 +420,7 @@
         <div class="brand-card">
           <div class="brand-card-header">
             <div class="brand-card-title">
-              <span>🛡️</span>
+              <span>ðŸ›¡ï¸</span>
               <span>Privacy & Minimalist Devices</span>
               <span class="brand-badge">${activeSpecCount}/${this.specialized.length} active</span>
             </div>
@@ -591,7 +591,7 @@
 
       if (appNameIn) {
         appNameIn.addEventListener('input', (e) => {
-          app.appMeta.appName = e.target.value || 'FocusedApp';
+          app.appMeta.appName = e.target.value || 'QForteApp';
           app.renderPackagerTable(app.getAllActiveTargets());
         });
       }
@@ -626,3 +626,4 @@
     module.exports = app;
   }
 })(typeof window !== 'undefined' ? window : this);
+

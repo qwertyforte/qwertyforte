@@ -55,12 +55,12 @@ All generated installation packages and distribution bundles must strictly confo
 $$\text{App\_Name} + \text{"\_"} + \text{Version\_Name} + \text{"\_"} + \text{Version\_Number} + \text{"\_"} + \text{Target\_OS} + \text{"\_"} + \text{OS\_Version} + \text{"\_"} + \text{Microprocessor\_Type} + \text{Extension}$$
 
 *Examples:*
-- `FocusedApp_Production_v1.0.0_Apple_iOS_18.0_arm64.ipa`
-- `FocusedApp_Production_v1.0.0_Microsoft_Windows_11_24H2_x86_64.msix`
-- `FocusedApp_Production_v1.0.0_Microsoft_Windows_Phone_10_Mobile_arm64.appx`
-- `FocusedApp_Production_v1.0.0_Linux_Ubuntu_24.04_x86_64.deb`
-- `FocusedApp_Production_v1.0.0_Symbian_Belle_FP2_armv7.sisx`
-- `FocusedApp_Production_v1.0.0_BlackBerry_OS_7.1_armv5te.cod`
+- `QForteApp_Production_v1.0.0_Apple_iOS_18.0_arm64.ipa`
+- `QForteApp_Production_v1.0.0_Microsoft_Windows_11_24H2_x86_64.msix`
+- `QForteApp_Production_v1.0.0_Microsoft_Windows_Phone_10_Mobile_arm64.appx`
+- `QForteApp_Production_v1.0.0_Linux_Ubuntu_24.04_x86_64.deb`
+- `QForteApp_Production_v1.0.0_Symbian_Belle_FP2_armv7.sisx`
+- `QForteApp_Production_v1.0.0_BlackBerry_OS_7.1_armv5te.cod`
 
 ---
 
@@ -74,4 +74,5 @@ When an AI Assistant interacts with a QwertyForte-enabled repository:
    Always consult `agents/insights/insights.jsonl` to understand the user's ongoing goals, target matrix selections, and architectural preferences.
 3. **Log New Insights:**  
    When meaningful decisions or adjustments occur, append a compact record to `agents/insights/insights.jsonl` following the [Agent Insight Protocol](file:///c:/Users/retlu/Documents/antigravity/qwertyforte/agents/INSIGHT_PROTOCOL.md).
+
 

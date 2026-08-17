@@ -114,9 +114,9 @@ AppName_VersionName_VersionNumber_TargetOS_OSVersion_Arch.ext
 
 **Example:**
 ```
-FocusedApp_Production_v1.0.0_apple_ios_ios_18_0_arm64.ipa
-FocusedApp_Production_v1.0.0_microsoft_windows_windows_11_24h2_x86_64.msix
-FocusedApp_Production_v1.0.0_symbian_os_symbian_belle_fp2_armv7.sisx
+QForteApp_Production_v1.0.0_apple_ios_ios_18_0_arm64.ipa
+QForteApp_Production_v1.0.0_microsoft_windows_windows_11_24h2_x86_64.msix
+QForteApp_Production_v1.0.0_symbian_os_symbian_belle_fp2_armv7.sisx
 ```
 
 Output is organized under `dist/builds/[brand]/[version]/[arch]/`.
@@ -188,4 +188,5 @@ See [`agents/INSIGHT_PROTOCOL.md`](agents/INSIGHT_PROTOCOL.md) for the schema sp
 ---
 
 *QwertyForte Development Standard â€” Version 1.0.0*
+
 

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * QwertyForte Package Engine & Naming Generator
  * Generates spec-compliant package structures, manifests, deployment descriptors,
  * and SHA-256 integrity checksums adhering to the strict naming convention.
@@ -31,7 +31,7 @@
     constructor() {}
 
     generatePackageName(appMeta, target) {
-      const appName = sanitizeSlug(appMeta.appName || 'FocusedApp');
+      const appName = sanitizeSlug(appMeta.appName || 'QForteApp');
       const versionName = sanitizeSlug(appMeta.versionName || 'Production');
       const versionNum = sanitizeSlug(appMeta.versionNumber || 'v1.0.0');
       const osName = sanitizeSlug(target.brandName || target.brand || 'OS');
@@ -176,3 +176,4 @@
     global.Packager = instance;
   }
 })(typeof window !== 'undefined' ? window : this);
+
