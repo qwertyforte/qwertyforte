@@ -1,4 +1,4 @@
-# The QwertyForte Development Standard
+﻿# The QwertyForte Development Standard
 
 > **Version:** 1.0.0-draft  
 > **Audience:** Developers, Technical Auditors, AI Assistants & IDE Agents  
@@ -11,7 +11,7 @@
 **QwertyForte** is a lightweight, portable scaffolding standard and build-matrix orchestration boilerplate. It is designed to solve two core challenges in modern multi-platform software engineering:
 
 1. **Developer Acceleration & Audience Scalability (Primary Goal):**  
-   Enables software engineers to scaffold and launch new cross-platform applications at maximum speed, providing frictionless, granular control over target deployment platforms—from cutting-edge modern operating systems to legacy environments, privacy phones, and embedded devices—without locking into bloated proprietary frameworks.
+   Enables software engineers to scaffold and launch new cross-platform applications at maximum speed, providing frictionless, granular control over target deployment platformsâ€”from cutting-edge modern operating systems to legacy environments, privacy phones, and embedded devicesâ€”without locking into bloated proprietary frameworks.
 
 2. **AI-Assisted Context Alignment (Secondary Goal):**  
    Provides a standardized, machine-readable architectural foundation that allows AI assistants (in Antigravity, Cursor, Copilot, Windsurf, Claude Code, and other AI IDEs) to immediately understand user expectations, maintain continuous goal trajectories across sessions, and execute precise scaffolding operations.
@@ -73,4 +73,5 @@ When an AI Assistant interacts with a QwertyForte-enabled repository:
 2. **Respect Developer Intent:**  
    Always consult `agents/insights/insights.jsonl` to understand the user's ongoing goals, target matrix selections, and architectural preferences.
 3. **Log New Insights:**  
-   When meaningful decisions or adjustments occur, append a compact record to `agents/insights/insights.jsonl` following the [Agent Insight Protocol](file:///c:/Users/retlu/Documents/antigravity/focused-franklin/agents/INSIGHT_PROTOCOL.md).
+   When meaningful decisions or adjustments occur, append a compact record to `agents/insights/insights.jsonl` following the [Agent Insight Protocol](file:///c:/Users/retlu/Documents/antigravity/qwertyforte/agents/INSIGHT_PROTOCOL.md).
+

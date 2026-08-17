@@ -1,4 +1,4 @@
-# QwertyForte — Export & Import Guide
+﻿# QwertyForte â€” Export & Import Guide
 
 This guide explains how to share QwertyForte with another developer or Antigravity account,
 and how to get it running immediately after import.
@@ -7,55 +7,55 @@ and how to get it running immediately after import.
 
 ## The 3 Transfer Methods
 
-### Option A — GitHub / GitLab (Recommended for Teams & Cloud)
+### Option A â€” GitHub / GitLab (Recommended for Teams & Cloud)
 
 The cleanest long-term approach. Anyone with repository access can clone and run in seconds.
 
 **On the origin machine:**
 ```bash
 # Create a new empty repo on GitHub or GitLab via their website, then:
-git remote add origin https://github.com/YOUR_USERNAME/focused-franklin.git
+git remote add origin https://github.com/YOUR_USERNAME/qwertyforte.git
 git push -u origin master
 ```
 
 **On the destination machine:**
 ```bash
-git clone https://github.com/YOUR_USERNAME/focused-franklin.git
-cd focused-franklin
+git clone https://github.com/YOUR_USERNAME/qwertyforte.git
+cd qwertyforte
 ```
-Then open the `focused-franklin/` folder as the workspace in Antigravity (or any IDE).
+Then open the `qwertyforte/` folder as the workspace in Antigravity (or any IDE).
 
 ---
 
-### Option B — Git Bundle (Single File, Full History)
+### Option B â€” Git Bundle (Single File, Full History)
 
 Preserves all commit history. Transfer the `.bundle` file via USB, cloud drive, or email.
 
 **Create the bundle (origin machine):**
 ```bash
-git bundle create focused-franklin-export.bundle --all
+git bundle create qwertyforte-export.bundle --all
 ```
 
 **Clone from the bundle (destination machine):**
 ```bash
-git clone focused-franklin-export.bundle focused-franklin
-cd focused-franklin
+git clone qwertyforte-export.bundle qwertyforte
+cd qwertyforte
 git log --oneline   # verify all history arrived
 ```
 
 ---
 
-### Option C — Zip Archive (Files Only, No History)
+### Option C â€” Zip Archive (Files Only, No History)
 
 Fastest option for a one-off handoff. No Git required on the destination machine.
 
 **Create the zip (PowerShell on Windows):**
 ```powershell
-Compress-Archive -Path .\* -DestinationPath ..\focused-franklin-export.zip
+Compress-Archive -Path .\* -DestinationPath ..\qwertyforte-export.zip
 ```
 
 **On the destination machine:**
-1. Extract `focused-franklin-export.zip` into a folder.
+1. Extract `qwertyforte-export.zip` into a folder.
 2. Optionally initialize a fresh Git repo:
    ```bash
    git init
@@ -122,3 +122,4 @@ have meaningful context about the project's direction without needing a full con
 - [ ] Open `http://localhost:8080` in a browser.
 - [ ] Type `/qforte` in Antigravity to trigger the scaffolding assistant.
 - [ ] Review `agents/insights/insights.jsonl` to inherit full session context.
+
